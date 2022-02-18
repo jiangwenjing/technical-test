@@ -37,10 +37,9 @@ const Coin = () => {
             <li>Name: {name}</li>
             <li>Symbol: {symbol}</li>
             <li>Hashing algorithm: {hashing_algorithm}</li>
-            <li>Description:<span dangerouslySetInnerHTML={{_html:description.en}}></span> </li>
-            {/*<li>Description: {description.en}</li>*/}
-            {/*<li>Market cap in Euro: {market_cap.eur}</li>*/}
-            {/*<li>Homepage: {links.homepage}</li>*/}
+            <li>Description:<span dangerouslySetInnerHTML={{__html:description.en}}></span> </li>
+            <li>Market cap in Euro:<span dangerouslySetInnerHTML={{__html:market_cap.eur}}></span> </li>
+            <li>Homepage:<span dangerouslySetInnerHTML={{__html:links.homepage}}></span> </li>
             <li>Genesis Date: {genesis_date}</li>
         </ul>
         );
