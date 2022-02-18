@@ -56,7 +56,7 @@ const Home = () => {
                             <div>
                                 <ul>
                                     <li><img src={image.large}  /></li>
-                                    <li><Link to="/${id}">ID: {id}</Link></li>
+                                    <li><Link to={`/${id}`}>ID: {id}</Link></li>
                                     <li>Name: {name}</li>
                                     <li>Symbol: {symbol}</li>
                                     <li>Current Price: {current_price}</li>
