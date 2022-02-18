@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -36,40 +38,7 @@
     transform: rotate(360deg);
   }
 }
-h1 {
-  /*margin: 5px auto;*/
-  /*align-items: center;*/
-}
+
 .container {
-  /*width: 90vw;*/
-  margin: 0 auto;
-  /*max-width: var(--max-width);*/
-}
-.coins {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem auto;
-}
-.coins li {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  /*background: var(--clr-white);*/
-  padding: 1rem 2rem;
-  /*border-radius: var(--radius);*/
-  text-align: left;
-}
-.coins img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-.coins h4 {
-  margin-bottom: 0.15rem;
-}
-.users a {
-  /*color: var(--clr-grey-5);*/
-  text-transform: capitalize;
+  margin: 10px 50px;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import axios from "axios"
+import { Descriptions } from 'antd'
 
 const Coin = () => {
     const [coins, setCoins] = useState({});
@@ -9,7 +10,6 @@ const Coin = () => {
     const [error, setError] = useState(null);
     const { name, symbol, hashing_algorithm, description={}, market_cap={}, links={}, genesis_date } = coins;
     console.log(id)
-    // console.log(links['homepage'])
     const getCoins = async () => {
         try {
             const response = await axios.get(
@@ -33,15 +33,25 @@ const Coin = () => {
     }, []);
 
     return (
-        <ul>
-            <li>Name: {name}</li>
-            <li>Symbol: {symbol}</li>
-            <li>Hashing algorithm: {hashing_algorithm}</li>
-            <li>Description:<span dangerouslySetInnerHTML={{__html:description.en}}></span> </li>
-            <li>Market cap in Euro:<span dangerouslySetInnerHTML={{__html:market_cap.eur}}></span> </li>
-            <li>Homepage:<span dangerouslySetInnerHTML={{__html:links.homepage}}></span> </li>
-            <li>Genesis Date: {genesis_date}</li>
-        </ul>
+        <div>
+            <Descriptions
+                title={name}
+                bordered
+                column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
+            >
+                <Descriptions.Item label="Name">{name}</Descriptions.Item>
+                <Descriptions.Item label="Symbol">{symbol}</Descriptions.Item>
+                <Descriptions.Item label="Hashing algorithm">{hashing_algorithm}</Descriptions.Item>
+                <Descriptions.Item label="Market cap in Euro:"><span dangerouslySetInnerHTML={{__html:market_cap.eur}}></span></Descriptions.Item>
+                <Descriptions.Item label="Homepage:"><span dangerouslySetInnerHTML={{__html:links.homepage}}></span></Descriptions.Item>
+                <Descriptions.Item label="Genesis Date:">{genesis_date}</Descriptions.Item>
+                <Descriptions.Item label="Description">
+                    <span dangerouslySetInnerHTML={{__html:description.en}}></span>
+                </Descriptions.Item>
+            </Descriptions>
+            <br/>
+        </div>
+
         );
 
 };
