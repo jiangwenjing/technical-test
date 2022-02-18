@@ -69,9 +69,9 @@ const Home = () => {
                                     <Descriptions.Item label="Name">{name}</Descriptions.Item>
                                     <Descriptions.Item label="Symbol">{symbol}</Descriptions.Item>
                                     <Descriptions.Item label="Price">
-                                        <p>Current Price: {current_price}</p>
-                                        <p>High 24 hour Price: {high_24h_price}</p>
-                                        <p>Low 24 hour Price: {low_24h_price}</p>
+                                        <p><span>Current Price:</span><br/>{current_price}</p>
+                                        <p><span>High 24 hour Price:</span><br/>{high_24h_price}</p>
+                                        <p><span>Low 24 hour Price:</span><br/>{low_24h_price}</p>
                                     </Descriptions.Item>
                                 </Descriptions>
                                 <br/>
